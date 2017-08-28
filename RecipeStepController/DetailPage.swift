@@ -46,6 +46,8 @@ class DetailPage: UIViewController {
     var recivedPk = 0
     var showRecipePk = 1 // 불러올 데티일 페이지 Pk
     // ****************************************
+    
+    // Userdefault
     var userdefault: String?
     
     var stepIndex = 1 // 레이블 현재 페이지
@@ -119,7 +121,6 @@ class DetailPage: UIViewController {
     }
     
     // 로그인 되어있을경우 로그인 버튼 사라지게 함
-    
     override func viewWillAppear(_ animated: Bool) {
         userdefault = UserDefaults.standard.object(forKey: "token") as? String
         if userdefault == nil {
