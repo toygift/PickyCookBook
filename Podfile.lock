@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (4.5.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - DTTextField (0.2.5)
+  - FBSDKCoreKit (4.25.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.25.0):
+    - FBSDKCoreKit
+  - FBSDKShareKit (4.25.0):
+    - FBSDKCoreKit
+  - LTMorphingLabel (0.5.2)
+  - RAMPaperSwitch (2.0.5)
+  - SwiftyJSON (3.1.4)
+  - Toaster (2.0.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - DTTextField (~> 0.2)
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - FBSDKShareKit
+  - LTMorphingLabel (~> 0.5)
+  - RAMPaperSwitch (~> 2.0.3)
+  - SwiftyJSON
+  - Toaster
+
+SPEC CHECKSUMS:
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DTTextField: 6f6c9875557c3db750971df436eb10b37c5df347
+  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
+  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
+  FBSDKShareKit: aea699d3cac749af08e360f4e949b82ffa8813f5
+  LTMorphingLabel: 56e735bee0c89691e715ee6818d827115e7e48a0
+  RAMPaperSwitch: 8e547186be122e858aa060596708f0dcbfe7593f
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Toaster: f13031c636ef065281bc11857be9a16c7659e04f
+
+PODFILE CHECKSUM: 418a54375986cee5d915f98afb83388aed98f59f
+
+COCOAPODS: 1.2.0

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="n4E-VE-1Sm">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Page View Controller-->
+        <scene sceneID="ecC-K6-tLW">
+            <objects>
+                <viewController storyboardIdentifier="LoginPageViewController" id="n4E-VE-1Sm" customClass="LoginPageViewController" customModule="RecipeStepController" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="euA-UP-lOA"/>
+                        <viewControllerLayoutGuide type="bottom" id="nDw-N6-UsJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vXH-Bd-hbS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yXG-WT-ipE">
+                                <rect key="frame" x="90" y="120" width="234" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oic-OP-gen">
+                                <rect key="frame" x="90" y="170" width="234" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="94P-6C-lAP">
+                                <rect key="frame" x="50" y="220" width="314" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnTouched:" destination="n4E-VE-1Sm" eventType="touchUpInside" id="DB5-Ef-glp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uaj-VW-CO6">
+                                <rect key="frame" x="218" y="261" width="55" height="30"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpBtnTouched:" destination="n4E-VE-1Sm" eventType="touchUpInside" id="PIZ-EO-BF3"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tj-op-4zh">
+                                <rect key="frame" x="204" y="266" width="6" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enp-m0-wJX">
+                                <rect key="frame" x="142" y="262" width="54" height="30"/>
+                                <state key="normal" title="To Main"/>
+                                <connections>
+                                    <action selector="backToMainBtnTouched:" destination="n4E-VE-1Sm" eventType="touchUpInside" id="twG-0k-fk1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginAvatar_64pix.png" translatesAutoresizingMaskIntoConstraints="NO" id="t6h-62-lNU">
+                                <rect key="frame" x="50" y="120" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Pw1-ui-To0"/>
+                                    <constraint firstAttribute="height" constant="30" id="fyp-ev-1tq"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginPassword_64pix.png" translatesAutoresizingMaskIntoConstraints="NO" id="3hr-Cw-UpP">
+                                <rect key="frame" x="50" y="170" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="tMH-bK-6di"/>
+                                    <constraint firstAttribute="width" constant="30" id="yJ8-iI-Z77"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="94P-6C-lAP" firstAttribute="top" secondItem="oic-OP-gen" secondAttribute="bottom" constant="20" id="2J6-5f-eLN"/>
+                            <constraint firstItem="Uaj-VW-CO6" firstAttribute="centerY" secondItem="4tj-op-4zh" secondAttribute="centerY" id="47e-tk-DOF"/>
+                            <constraint firstAttribute="trailing" secondItem="oic-OP-gen" secondAttribute="trailing" constant="90" id="9PC-eJ-2Le"/>
+                            <constraint firstItem="t6h-62-lNU" firstAttribute="centerY" secondItem="yXG-WT-ipE" secondAttribute="centerY" id="AhY-MY-4hC"/>
+                            <constraint firstItem="3hr-Cw-UpP" firstAttribute="centerY" secondItem="oic-OP-gen" secondAttribute="centerY" id="Buk-Rp-2uD"/>
+                            <constraint firstItem="yXG-WT-ipE" firstAttribute="leading" secondItem="t6h-62-lNU" secondAttribute="trailing" constant="10" id="I1b-W2-2qC"/>
+                            <constraint firstItem="t6h-62-lNU" firstAttribute="leading" secondItem="vXH-Bd-hbS" secondAttribute="leading" constant="50" id="NGu-fg-WC4"/>
+                            <constraint firstItem="yXG-WT-ipE" firstAttribute="top" secondItem="euA-UP-lOA" secondAttribute="bottom" constant="100" id="Rv0-8m-JcV"/>
+                            <constraint firstItem="4tj-op-4zh" firstAttribute="centerX" secondItem="vXH-Bd-hbS" secondAttribute="centerX" id="Rwv-2L-7D3"/>
+                            <constraint firstItem="oic-OP-gen" firstAttribute="leading" secondItem="3hr-Cw-UpP" secondAttribute="trailing" constant="10" id="UqZ-AA-izI"/>
+                            <constraint firstItem="4tj-op-4zh" firstAttribute="top" secondItem="94P-6C-lAP" secondAttribute="bottom" constant="10" id="Y1Z-jI-EIQ"/>
+                            <constraint firstItem="94P-6C-lAP" firstAttribute="leading" secondItem="vXH-Bd-hbS" secondAttribute="leading" constant="50" id="gLF-zU-DG9"/>
+                            <constraint firstItem="oic-OP-gen" firstAttribute="top" secondItem="yXG-WT-ipE" secondAttribute="bottom" constant="20" id="geO-Lw-pAc"/>
+                            <constraint firstItem="3hr-Cw-UpP" firstAttribute="leading" secondItem="vXH-Bd-hbS" secondAttribute="leading" constant="50" id="izi-aA-idf"/>
+                            <constraint firstAttribute="trailing" secondItem="94P-6C-lAP" secondAttribute="trailing" constant="50" id="ldm-zd-zhK"/>
+                            <constraint firstItem="4tj-op-4zh" firstAttribute="leading" secondItem="enp-m0-wJX" secondAttribute="trailing" constant="8" id="mX8-cl-gFZ"/>
+                            <constraint firstItem="enp-m0-wJX" firstAttribute="centerY" secondItem="4tj-op-4zh" secondAttribute="centerY" id="pff-MU-9B2"/>
+                            <constraint firstItem="Uaj-VW-CO6" firstAttribute="leading" secondItem="4tj-op-4zh" secondAttribute="trailing" constant="8" id="pli-17-VJ8"/>
+                            <constraint firstAttribute="trailing" secondItem="yXG-WT-ipE" secondAttribute="trailing" constant="90" id="t7h-YY-ea8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backToMainBtnOutlet" destination="enp-m0-wJX" id="W65-bD-IZ8"/>
+                        <outlet property="loginBtnOutlet" destination="94P-6C-lAP" id="94Z-xW-vYA"/>
+                        <outlet property="loginInputEmailTF" destination="yXG-WT-ipE" id="uUW-kS-BRR"/>
+                        <outlet property="loginInputPassWordTF" destination="oic-OP-gen" id="dkR-21-5ct"/>
+                        <outlet property="signUpBtnOutlet" destination="Uaj-VW-CO6" id="TtX-AR-UMb"/>
+                        <segue destination="wh7-ab-p9V" kind="unwind" unwindAction="backProfileVC:" id="Yo3-zs-GE3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FlQ-Rv-iIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wh7-ab-p9V" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="183" y="-485"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="LoginAvatar_64pix.png" width="64" height="64"/>
+        <image name="LoginPassword_64pix.png" width="64" height="64"/>
+    </resources>
+</document>
