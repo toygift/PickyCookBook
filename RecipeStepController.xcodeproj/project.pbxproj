@@ -86,6 +86,7 @@
 		BAB86A981F4FB6FF00309B7E /* cooking_icon_05.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB86A971F4FB6FF00309B7E /* cooking_icon_05.png */; };
 		BAB86A9A1F4FB7AC00309B7E /* cooking_icon_06.png in Resources */ = {isa = PBXBuildFile; fileRef = BAB86A991F4FB7AC00309B7E /* cooking_icon_06.png */; };
 		BAC7F4A01F5535C100481601 /* githubtest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7F49F1F5535C100481601 /* githubtest.swift */; };
+		BAC7F4A21F5536B800481601 /* githubtest2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7F4A11F5536B800481601 /* githubtest2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +173,7 @@
 		BAB86A971F4FB6FF00309B7E /* cooking_icon_05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooking_icon_05.png; sourceTree = "<group>"; };
 		BAB86A991F4FB7AC00309B7E /* cooking_icon_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cooking_icon_06.png; sourceTree = "<group>"; };
 		BAC7F49F1F5535C100481601 /* githubtest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = githubtest.swift; sourceTree = "<group>"; };
+		BAC7F4A11F5536B800481601 /* githubtest2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = githubtest2.swift; sourceTree = "<group>"; };
 		E03B21EC7C48B8C042127697 /* Pods_RecipeStepController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipeStepController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC7F49F1F5535C100481601 /* githubtest.swift */,
+				BAC7F4A11F5536B800481601 /* githubtest2.swift */,
 				4B623FA31F46E1210032D7D1 /* RecipeStepController */,
 				4B623FA21F46E1210032D7D1 /* Products */,
 				9047897500AF3B2656F34193 /* Pods */,
@@ -590,6 +593,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B42C6311F4AF28F00BB3549 /* MyPage.swift in Sources */,
+				BAC7F4A21F5536B800481601 /* githubtest2.swift in Sources */,
 				4B9EC6411F4976E4000C0E4D /* ApiDelegate.swift in Sources */,
 				BAC7F4A01F5535C100481601 /* githubtest.swift in Sources */,
 				3F292B751F48D95C00233C35 /* RAMPaperSwitch.swift in Sources */,
