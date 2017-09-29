@@ -110,6 +110,7 @@ class MainPage: UIViewController, UICollectionViewDelegate, UICollectionViewData
         let sendRecipePk = self.pickyData[indexPath.row]["pk"].intValue
         // 값 전달
         dvc.recivedPk = sendRecipePk
+        UserDefaults.standard.set(sendRecipePk, forKey: "pk")
         self.present(dvc, animated: true)
         
     }

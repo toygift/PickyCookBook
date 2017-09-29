@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Toaster
 //import LTMorphingLabel
 //import AssetsLibrary
 
@@ -19,13 +20,14 @@ class DetailPage: UIViewController {
     //                        Outlet 셋팅                         //
     ////////////////////////////////////////////////////////////////
     
+    @IBOutlet weak var sc: UIScrollView!
     @IBOutlet var imageView: UIImageView! // 레시피 이미지 뷰
     @IBOutlet var pageCountlabel: UILabel! // 현재 페이지 표시 라벨
     @IBOutlet weak var recipeDescriptionLabel: UILabel! // 레시피 간략 설명 라벨
     @IBOutlet weak var recipeTitleLabel: UILabel! // 레시피 타이틀 라벨
     @IBOutlet weak var recipeIngredientLabel: UILabel! // 레시피 재료 설명 라벨
     @IBOutlet weak var recipeTagLabel: UILabel! // 레시피 태그 라벨
-    
+    @IBOutlet var bookmarkCre: UIButton!
     // 좋아요 평점
     @IBOutlet weak var star1: UIButton!
     @IBOutlet weak var star2: UIButton!
@@ -36,6 +38,7 @@ class DetailPage: UIViewController {
     // 이전 & 다음 단계 이동
     @IBOutlet var nextOutlet: UIButton! // 다음단계 레시피 버튼
     @IBOutlet var backOutlet: UIButton! // 한단계 전 레시피 버튼
+    @IBOutlet var mainUIView: UIView!
     
     // MARK: - variable
     ////////////////////////////////////////////////////////////////
@@ -49,7 +52,8 @@ class DetailPage: UIViewController {
     
     // Userdefault
     var userdefault: String?
-    
+    // bookmark Array
+    var bookmark = [Int]()
     var stepIndex = 1 // 레이블 현재 페이지
     var recipeStepNumber = 0 // 레시피 스탭 구분
     var recipeStepCount = 0 // 레시피 스탭의 총 갯수
@@ -83,6 +87,64 @@ class DetailPage: UIViewController {
         }
     }
     
+    @IBAction func bookmarkCreate(_ sender: UIButton) {
+        let pkInt = UserDefaults.standard.integer(forKey: "pk")
+        
+        if bookmarkCre.isSelected == true {
+            Toast(text: "이미북마크하셨습니다").show()
+        }
+        
+        if bookmark.contains(pkInt){
+            Toast(text: "이미북마크하셨습니다").show()
+        } else {
+            var memo = ""
+            guard let token = UserDefaults.standard.string(forKey: "token") else { return }
+            print("토큰1 : ", token)
+            let alert = UIAlertController(title: "북마크", message: "메모를 입력하세요", preferredStyle: .alert)
+            
+            let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+            let ok = UIAlertAction(title: "확인", style: .default) { (UIAlertAction) in
+                if let title = alert.textFields?[0].text {
+                    memo = title
+                }
+                print("토큰2 : ", token)
+                print("PK:   ", pkInt)
+                let url = "http://pickycookbook.co.kr/api/recipe/bookmark/\(pkInt)/"
+                let parameters: Parameters = ["memo":memo]
+                let headers: HTTPHeaders = ["Authorization":"token \(token)"]
+                print("토큰3 : ", token)
+                Alamofire.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+                    switch response.result {
+                    case .success(let vaule):
+                        let json = JSON(vaule)
+                        print(json)
+                        
+                       if json["memo"].stringValue.isEmpty {
+                            Toast(text: "북마크되었습니다").show()
+                        }
+                        self.viewDidLoad()
+                        self.viewWillAppear(true)
+                        
+                                            case .failure(let error):
+                        print(JSON(error))
+                    }
+                }
+                self.bookmarkCre.isSelected = true
+            }
+            alert.addTextField { (textfield) in
+                textfield.keyboardAppearance = .dark
+                textfield.placeholder = "메모를 입력하세요"
+            }
+            alert.addAction(cancel)
+            alert.addAction(ok)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        
+        }
+        
+        
+    }
     @IBAction func starBtnDidTap(_ sender: UIButton) {
         switch rate {
         case 1:
@@ -102,18 +164,13 @@ class DetailPage: UIViewController {
         print(recivedPk)
         print(showRecipePk)
         
-
-
-        
         if recivedPk != 0 {
             showRecipePk = recivedPk
         } else {
             showRecipePk = 1
         }
         
-        
-
-        
+            
         self.backOutlet.isEnabled = false
         apiGet()
         
@@ -122,11 +179,36 @@ class DetailPage: UIViewController {
     
     // 로그인 되어있을경우 로그인 버튼 사라지게 함
     override func viewWillAppear(_ animated: Bool) {
+        
         userdefault = UserDefaults.standard.object(forKey: "token") as? String
         if userdefault == nil {
             loginButtonOutlet.isHidden = false
         }else {
             loginButtonOutlet.isHidden = true
+        }
+        guard let token = UserDefaults.standard.string(forKey: "token") else { return }
+        let url = "http://pickycookbook.co.kr/api/recipe/bookmark/"
+        let headers: HTTPHeaders = ["Authorization":"token \(token)"]
+        print("ALAMOFIRE")
+        Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers).responseJSON { (response) in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+                
+                //let arrayNum = 100
+                for (_, value) in json {
+                    print("for", value["pk"].intValue)
+                    self.bookmark.append(value["pk"].intValue)
+                    print("어어어어어")
+                }
+                
+                
+                print("북마크어레이: ",self.bookmark)
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     override func didReceiveMemoryWarning() {
@@ -244,8 +326,9 @@ class DetailPage: UIViewController {
     ////////////////////////////////////////////////////////////////
     
     func apiGet(){
-        print("api 시작 \(showRecipePk)")
-        let url = "http://pickycookbook.co.kr/api/recipe/detail/\(showRecipePk)"
+        let pkInt = UserDefaults.standard.integer(forKey: "pk")
+        print("api 시작 \(pkInt)")
+        let url = "http://pickycookbook.co.kr/api/recipe/detail/\(pkInt)"
         let call = Alamofire.request(url, method: .get, encoding: JSONEncoding.default)
         call.responseJSON { (response) in
             switch response.result {

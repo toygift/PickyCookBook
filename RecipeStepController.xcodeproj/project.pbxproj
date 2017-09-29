@@ -11,6 +11,8 @@
 		3F292B751F48D95C00233C35 /* RAMPaperSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F292B741F48D95C00233C35 /* RAMPaperSwitch.swift */; };
 		3F65B1741F4CA017009CBD7A /* BookMarkListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65B1731F4CA017009CBD7A /* BookMarkListPage.swift */; };
 		3F65B1771F4CA043009CBD7A /* BookMarkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F65B1761F4CA043009CBD7A /* BookMarkListCell.swift */; };
+		3F67AA201F596F9900EABC87 /* LoginTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67AA1F1F596F9900EABC87 /* LoginTabbar.swift */; };
+		3F67AA221F59730E00EABC87 /* MainTabbarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F67AA211F59730E00EABC87 /* MainTabbarControllerViewController.swift */; };
 		3FD86A841F48C8E00012C3F8 /* DTTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD86A831F48C8E00012C3F8 /* DTTextField.swift */; };
 		3FF37F1C1F53CDF20026E48B /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF37F1B1F53CDF20026E48B /* MainTabbar.swift */; };
 		3FF37F1E1F53CE5D0026E48B /* MainTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF37F1D1F53CE5D0026E48B /* MainTabBarButton.swift */; };
@@ -91,6 +93,8 @@
 		3F292B741F48D95C00233C35 /* RAMPaperSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMPaperSwitch.swift; sourceTree = "<group>"; };
 		3F65B1731F4CA017009CBD7A /* BookMarkListPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkListPage.swift; sourceTree = "<group>"; };
 		3F65B1761F4CA043009CBD7A /* BookMarkListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarkListCell.swift; sourceTree = "<group>"; };
+		3F67AA1F1F596F9900EABC87 /* LoginTabbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTabbar.swift; sourceTree = "<group>"; };
+		3F67AA211F59730E00EABC87 /* MainTabbarControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarControllerViewController.swift; sourceTree = "<group>"; };
 		3FD86A831F48C8E00012C3F8 /* DTTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTTextField.swift; sourceTree = "<group>"; };
 		3FF37F1B1F53CDF20026E48B /* MainTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		3FF37F1D1F53CE5D0026E48B /* MainTabBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarButton.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				4B623FA81F46E1210032D7D1 /* Main.storyboard */,
+				3F67AA211F59730E00EABC87 /* MainTabbarControllerViewController.swift */,
+				3F67AA1F1F596F9900EABC87 /* LoginTabbar.swift */,
 				3FF37F1D1F53CE5D0026E48B /* MainTabBarButton.swift */,
 				3FF37F1B1F53CDF20026E48B /* MainTabbar.swift */,
 				3F65B1751F4CA01B009CBD7A /* BOOKMARK */,
@@ -589,12 +595,14 @@
 				4B42C6311F4AF28F00BB3549 /* MyPage.swift in Sources */,
 				4B9EC6411F4976E4000C0E4D /* ApiDelegate.swift in Sources */,
 				3F292B751F48D95C00233C35 /* RAMPaperSwitch.swift in Sources */,
+				3F67AA221F59730E00EABC87 /* MainTabbarControllerViewController.swift in Sources */,
 				4B9EC6451F49827C000C0E4D /* SignUpPage.swift in Sources */,
 				4B42C6331F4AF68200BB3549 /* MyInfoModifyPage.swift in Sources */,
 				4B623FA71F46E1210032D7D1 /* RecipeStepCreate.swift in Sources */,
 				3F65B1771F4CA043009CBD7A /* BookMarkListCell.swift in Sources */,
 				3FD86A841F48C8E00012C3F8 /* DTTextField.swift in Sources */,
 				BA6F09621F4F17BE00C123CD /* SearchResultCollectionViewCell.swift in Sources */,
+				3F67AA201F596F9900EABC87 /* LoginTabbar.swift in Sources */,
 				BA6F09611F4F17BE00C123CD /* SearchPage.swift in Sources */,
 				BAB2F97C1F4DAA1F003AC513 /* DetailPage.swift in Sources */,
 				BAB2F98D1F4DAAA0003AC513 /* LoginPage.swift in Sources */,

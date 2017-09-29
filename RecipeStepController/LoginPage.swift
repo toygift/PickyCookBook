@@ -60,6 +60,12 @@ class LoginPage: UIViewController, FBSDKLoginButtonDelegate ,UITextFieldDelegate
         return true
     }
     
+    @IBAction func toMain(_ sender: UIButton) {
+        guard let nextview = storyboard?.instantiateViewController(withIdentifier: "MainTabBar") else { return }
+        
+        self.present(nextview, animated: true, completion: nil)
+        
+    }
     @IBAction func login(_ sender: UIButton){
         guard let email = emailInputTextField.text else { return }
         guard let password = passwordIntputTextField.text else { return }
@@ -281,10 +287,17 @@ extension LoginPage {
                     let currentUserPk = json["pk"].intValue
                     UserDefaults.standard.set(currentUserPk, forKey: "userPK")
                     
-                    guard let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyPageStoryBoard") else {
-                        return
-                    }
-                    self.present(nextViewController, animated: true, completion: nil)
+                    
+                    
+                        let tabbarController = self.storyboard?.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabbarControllerViewController
+                        self.present(tabbarController, animated: true, completion: nil)
+                    
+                    
+                    
+//                    guard let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "MyPageStoryBoard") else {
+//                        return
+//                    }
+//                    self.present(nextViewController, animated: true, completion: nil)
                 }
                 
                 
